@@ -1,0 +1,16 @@
+
+[1mFrom:[0m /home/ec2-user/environment/rb109/lesson1/practice_problem3.rb:30 Object#to_weird_case:
+
+    [1;34m22[0m: [32mdef[0m [1;34mto_weird_case[0m(string)
+    [1;34m23[0m:   string_array = string.split
+    [1;34m24[0m:   index = [1;34m2[0m
+    [1;34m25[0m:   string_array.map [32mdo[0m |word|
+    [1;34m26[0m:     [32mif[0m string_array[index]
+    [1;34m27[0m:       word.gsub!(word[[1;34m1[0m], word[[1;34m1[0m].upcase)
+    [1;34m28[0m:     [32mend[0m 
+    [1;34m29[0m:     index += [1;34m3[0m
+ => [1;34m30[0m:     binding.pry
+    [1;34m31[0m:   [32mend[0m 
+    [1;34m32[0m:   string_array
+    [1;34m33[0m: [32mend[0m 
+

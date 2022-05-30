@@ -39,3 +39,39 @@ end
   # have array.uniq assigned to new variable - this is what is used to get the specific count of smaller num.
   # use .select to select elements that are larger than num in array.uniq. get size of this array. this num is then pushed into new_array
   #  
+  
+  #ANOTHER WAY
+  
+  def smaller_numbers_than_current(array)
+  ind = 0
+  counter = 0
+  new_array = []
+  array.each do |index|
+    while ind < array.uniq.size 
+      if index > array.uniq[ind]
+        counter += 1
+      end 
+      ind += 1
+    end
+    new_array << counter 
+    counter = 0
+    ind = 0
+  end 
+  new_array
+end 
+  
+p smaller_numbers_than_current([8,1,2,2,3])
+
+  
+  
+
+
+
+# array vs. array.uniq (greater than or lesser than)
+# input: array of num
+# output: array - counting num that are smaller than n
+# will need to iterate over array.uniq and compare all values
+# to each individual n in array
+# a counter will keep track of times array[n] is larger than 
+# array.uniq[n]
+#

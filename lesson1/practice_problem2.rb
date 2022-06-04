@@ -20,6 +20,36 @@ def minimum_sum(array)
   all_sums.sort[0]
 end 
 
+# OR OTHER WAY:
+
+# input: array of integers
+# return: min sum of 5 consecutive nums in array
+# nil if array.size < 5
+# should group by 5 in their consecutive order
+# collect sum of each group and select min sum
+# methods - 
+  # loop - 
+    # array[index, 5].sum would be added to total_sums_array
+    # index would change in each iteration so as to create
+    # a new 5num group. 
+    # break would have to happen once the 5num group includes
+    #last num of array
+    # total_sums_array => can either use sort[0] or .min
+
+
+def minimum_sum(num_array)
+  total_sums_array = []
+  index = 0
+  return nil if num_array.size < 5
+  loop do 
+    total_sums_array << (num_array[index, 5]).sum
+    index += 1
+    break if index + 5 == num_array.size
+  end 
+  total_sums_array.min 
+end
+
+
 
 p minimum_sum([1, 2, 3, 4]) == nil
 p minimum_sum([1, 2, 3, 4, 5, 6]) == 15

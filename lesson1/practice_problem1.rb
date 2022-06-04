@@ -10,7 +10,6 @@ def smaller_num_than_current(array)
       end
       index += 1
       break if index >= array.uniq.size
-      
     end
     new_array << counter
     counter = 0
@@ -62,10 +61,24 @@ end
   
 p smaller_numbers_than_current([8,1,2,2,3])
 
-  
-  
+#OTHER WAY
 
-
+def smaller_numbers_than_current(nums_array)
+  counter = 0
+  index = 0
+  new_array = []
+  nums_array.each do |num|
+    loop do 
+      counter += 1 if num > nums_array.uniq[index]
+      index += 1
+      break if index == nums_array.uniq.size
+    end 
+    new_array << counter
+    index = 0
+    counter = 0    
+  end
+  new_array
+end
 
 # array vs. array.uniq (greater than or lesser than)
 # input: array of num

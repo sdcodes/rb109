@@ -8,7 +8,14 @@ def closest_numbers(array)
 end 
   
     
-  
+ # OTHER WAY
+ 
+ def closest_numbers(num_array)
+  combo_hash = {}
+  num_array.combination(2) {|combo| combo_hash[combo] = (combo.sort {|a, b| b <=> a }).inject(:-) }
+  min_combo = combo_hash.min { |pair1, pair2| pair1[1] <=> pair2[1] }
+  min_combo[0]
+end 
   
 
 p closest_numbers([5, 25, 15, 11, 20]) == [15, 11]

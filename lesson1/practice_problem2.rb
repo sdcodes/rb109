@@ -4,7 +4,6 @@
 # by consecutive integers, they mean in the current indexed list
 # should be able to use range of 5 nums and compare all the different sums that results in. return smallest sum
 
-
 def minimum_sum(array)
   index = 0
   all_sums = []
@@ -48,6 +47,18 @@ def minimum_sum(num_array)
   end 
   total_sums_array.min 
 end
+
+# OTHER WAY
+def minimum_sum(array)
+  return nil if array.size < 5
+  index = 0
+  collection = []
+  until 5 + index > array.size
+    collection << array[index, 5].sum
+    index += 1
+  end
+  collection.min
+end 
 
 
 

@@ -12,6 +12,8 @@ def least_common_char(string)
   new_array[0]
 end 
 
+# OTHER WAY
+
 def least_common_char(string)
   ch_hash = {}
   string.each_char do |ch|
@@ -21,7 +23,7 @@ def least_common_char(string)
       ch_hash[ch.downcase] = 1
     end 
   end 
-  (ch_hash.min_by {|k, v| v})[0] 
+  ch_hash.min_by {|k, v| v}[0] 
 end 
 
 p least_common_char("Hello World") #== "h"

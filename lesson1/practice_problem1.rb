@@ -86,5 +86,33 @@ end
 # will need to iterate over array.uniq and compare all values
 # to each individual n in array
 # a counter will keep track of times array[n] is larger than 
-# array.uniq[n]
-#
+# array.uniq[n] 
+
+# ANOTHER WAY
+
+def smaller_numbers_than_current(num_array)
+  count = 0
+  index = 0
+  num_array.map do |num|
+    count = 0
+    index = 0
+    loop do
+      count += 1 if num > num_array.uniq[index]
+      index += 1
+      break if index == num_array.uniq.size
+    end
+    count
+  end
+end
+
+# OTHER WAY
+def smaller_numbers_than_current(original_array)
+  uniq_arr = original_array.uniq
+  original_array.map do |number|
+    count = 0
+    uniq_arr.each do |n|
+      count += 1 if number > n 
+    end
+    count 
+  end     
+end

@@ -21,7 +21,30 @@ def to_weird_case(string)
     end 
   end 
   new_array.join(" ")
-end     
+end 
+
+# OTHER WAY
+def to_weird_case(original_string)
+  word_index = 0
+ string_arr = original_string.split(" ")
+ string_arr.map! do |word|
+   word_index += 1
+   new_word = ""
+    if word_index % 3 == 0
+      word.chars.each_with_index do |ch, index|
+        if index.odd?
+          new_word << ch.upcase
+        else 
+          new_word << ch
+        end
+      end 
+      new_word
+    else 
+      word     
+    end
+  end
+  string_arr.join(" ")
+end 
       
       
 p to_weird_case('Lorem Ipsum is simply dummy text of the printing') == 'Lorem Ipsum iS simply dummy tExT of the pRiNtInG'
